@@ -63,6 +63,9 @@ module Minitest
       end
 
       def parse_xml_for(xml, suite, tests)
+        puts '-' * 50
+        puts tests.map(&:to_s)
+        puts '-' * 50
         suite_result = analyze_suite(tests)
         file_path = Pathname.new(get_source_location(tests.first).first)
         base_path = Pathname.new(@base_path)
